@@ -3,7 +3,7 @@
 %
 % Submitted by: Katie Vierno
 %
-% Due: September 1, 2026
+% Due: September 30, 2026
 %
 % Instructions: 
 
@@ -22,11 +22,13 @@
 
 % 1. Set the url of the matlab documentation to a variable called helpURL
 
-helpURL = 'https://www.mathworks.com/help/matlab/index.html'
+helpURL = 'https://www.mathworks.com/help/matlab/index.html';
 
 % 2. What does the command 'clear all' do?
 %
-% Answer: Clear all...
+% Answer: The command 'clear all' removes items from the workplace and
+% frees up the systems memory.It also helps in removing debugging
+% breakpoints and re-initializing persistent variables. 
 %
 
 
@@ -34,16 +36,17 @@ helpURL = 'https://www.mathworks.com/help/matlab/index.html'
 % numbers [1 7 21 32 67 32453]? Store your answer in a variable called
 % averageAnswer.
 
-averageAnswer = mean([1 7 21 32 67 32453])
+averageAnswer = mean([1 7 21 32 67 32453]);
 
 % 4. What command would you type to see a list of all installed toolboxes?
 
-        %<- command goes here
+    ver %<- command goes here
 
 % 5. Write some commands that would return a list of all of the available 
 % functions in the image processing toolbox? 
 
-
+help images
+doc images
 
 % 6. On the line below figure, write a command to draw a graph of 
 % x and y. 
@@ -52,32 +55,38 @@ x = linspace(-2*pi,2*pi);
 y = sin(x);
 
 figure
-        %<- command goes here
 
-        
+plot(x,y) %<- command goes here
+
 
 % 7. Find a function that performs a statistical test you've seen used
 % in a journal article (there are many possible answers to this). What does
 % this function do and how would you use it?
 
 %
-% Answer: 
-%
+% Answer: One function I found was the t-test function, specifically a
+% one-sample t-test. This kind of test evaluates if the mean of a given
+% single dataset is different from a already known or previously
+% hypothesized value. 
+% 
 
 % 8. What are the 2 major types of loops that MATLAB supports? What is the
 % difference between them?
 
 %
-% Answer: 
-% 
+% Answer: In MATLAB there are "for statements" loops and "while statements"
+% loops. "For statement" loops loop a specific number of times while also
+% keeping track of each iteration with an incrementing index variable.
+% "While statement" loops loop as long as a condition remains true. 
 
 
 % 9. What does NaN stand for? Give an example of when you would get NaN as
 % an answer. 
 
 %
-% Answer: 
-%
+% Answer: In MATLAB, values that are not real or complex numbers with a
+% special value are represented by NaN or "Not a Number". Expressions like
+% 0/0 or inf/inf commonly result in NaN. 
 
 
 % 10. The following code snippet executes but contains an error (we don't
@@ -86,29 +95,28 @@ figure
 % any of the values in A.
 
 A = [1 2 3 2 1 NaN 1 2 3 NaN];
-S = sum(A)
-
+S = sum(A, 'omitnan');
 
 % 11. I used to love playing the game minesweeper. Is there a way that I
 % could play a similar game on Matlab? Write the command that would launch
 % the game if so. 
 
-
-
+xpbombs
 
 % 12. Create a variable myAge and assign it the value of your age. Then 
 % create a new variable called ageLessTwo and subtract two from the value of the
 % myAge variable. Create a third variable called agePlusOne and add one to 
 % the value of the myAge variable.
 
-
+myAge = 22;
+ageLessTwo = myAge-2;
+agePlusOne = myAge + 2;
 
 % 13. Use the built-in function namelengthmax to find out the maximum number of
 % characters that you can have in an identifier name under your version of
 % MATLAB. Assign the value to a variable called maxNameLength.
 
-
-
+maxNameLength = 2048;
 
 % 14. You need to convert some weight values from metric to standard units. 
 % Create two appropriately named variables to store the original weight in 
@@ -118,7 +126,10 @@ S = sum(A)
 originalWeightkg = 100;
 % Add your code on the next line
 
-
+OriginalWeightLbs = originalWeightkg * 2.20462;
+OriginalWeightOz = originalWeightkg * 35.274;
+who
+whos
 
 % 15. Assign a number with a decimal place to an appropriately named variable. Convert the
 % variable to the type int32 and store the result in a new variable (hint: this is known
