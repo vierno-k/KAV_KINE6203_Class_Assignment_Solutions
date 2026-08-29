@@ -64,11 +64,10 @@ plot(x,y) %<- command goes here
 % this function do and how would you use it?
 
 %
-% Answer: One function I found was the t-test function, specifically a
-% one-sample t-test. This kind of test evaluates if the mean of a given
-% single dataset is different from a already known or previously
-% hypothesized value. 
-% 
+% Answer: One function I found was the 'corr' function. You would use this function 
+% when you want to see if two separate variables are related or not by
+% using a correlation coefficient as well as a p-value. 
+%
 
 % 8. What are the 2 major types of loops that MATLAB supports? What is the
 % difference between them?
@@ -77,7 +76,8 @@ plot(x,y) %<- command goes here
 % Answer: In MATLAB there are "for statements" loops and "while statements"
 % loops. "For statement" loops loop a specific number of times while also
 % keeping track of each iteration with an incrementing index variable.
-% "While statement" loops loop as long as a condition remains true. 
+% "While statement" loops loop as long as a condition remains true.
+%
 
 
 % 9. What does NaN stand for? Give an example of when you would get NaN as
@@ -87,6 +87,7 @@ plot(x,y) %<- command goes here
 % Answer: In MATLAB, values that are not real or complex numbers with a
 % special value are represented by NaN or "Not a Number". Expressions like
 % 0/0 or inf/inf commonly result in NaN. 
+%
 
 
 % 10. The following code snippet executes but contains an error (we don't
@@ -95,7 +96,7 @@ plot(x,y) %<- command goes here
 % any of the values in A.
 
 A = [1 2 3 2 1 NaN 1 2 3 NaN];
-S = sum(A, 'omitnan');
+X = sum(A, 'omitnan');
 
 % 11. I used to love playing the game minesweeper. Is there a way that I
 % could play a similar game on Matlab? Write the command that would launch
@@ -124,10 +125,17 @@ maxNameLength = 2048;
 % to see the variables. Clear one of your variables and then use who and whos again.
 
 originalWeightkg = 100;
+
 % Add your code on the next line
 
-OriginalWeightLbs = originalWeightkg * 2.20462;
-OriginalWeightOz = originalWeightkg * 35.274;
+originalWeightLbs = (originalWeightkg * 2.20462);
+originalWeightoz = (originalWeightkg * 35.2740);
+
+who
+whos
+
+clear originalWeightLbs
+
 who
 whos
 
@@ -135,21 +143,25 @@ whos
 % variable to the type int32 and store the result in a new variable (hint: this is known
 % as casting in computer programming). Use whos to check your result. 
 
+NumberwithDecimal = 19.5;
 
+NumberwithDecimalInt = int32(NumberwithDecimal);
 
+whos
 
 % 16. Create a variable called weightInLBs to store a weight in pounds. Convert this to 
 % kilograms using an appropriate calculation or function and assign the result to a variable weightInKgs.
 
-
-
+weightInLBs = 55;
+weightInKgs = (weightInLBs / 2.20462);
 
 % 18. Create a variable fTemp to store a temperature in degrees Fahrenheit (F). 
 % Convert this to degrees Celsius (C) using an appropriate 
 % calculation and store the result in a variable cTemp.
 
+fTemp = 19;
 
-
+cTemp = (fTemp - 32) * 5/9;
 
 % 19. Using the colon operator, create the following row vectors:
 % 2 3 4 5 6 7 
@@ -157,22 +169,23 @@ whos
 % 8 6 4 2
 % Store your results with variable names vecA, vecB and vecC respectively.
 
+vecA = 2:7;
 
+vecB = 1.1000:0.2:1.7000;
 
+vecC = 8:-2:2;
 
 % 20. Give a MATLAB expression that would create a vector 
 % (assigned to a variable called vec) of 50 elements that range, equally spaced, 
 % from 0 to 2pi. 
 
-
-
+vec = linspace (0, 2*pi, 50);
 
 % 21. Using the colon operator and the transpose operator, 
 % create a column vector that has the values -1 to 1 in steps of 0.5.
 % Assign your answer to a variable called colVec.
 
-
-
+colVec = (-1: 0.5 : 1)';
 
 % 22. Create a variable called rows that is a random integer in the inclusive range 
 % from 1 to 5. Create a variable called cols that is a random integer in the 
@@ -180,35 +193,54 @@ whos
 % dimensions given by the values of rows and cols. The resultMat should
 % change each time you execute your code. 
 
+rows = randi ([1 5]);
 
+cols = randi ([1 5]);
 
+resulltMat = zeros ([rows, cols]);
 
 % 23. Create a vector of five random integers, each in the inclusive range 
 % from -10 to 10 assigned to a variable named originalVec. Perform each of 
 % the following on the original vector and store your results in appropriately 
 % named variables. (you should have a seperate line of code for each)
 
+originalVec = randi([-10 10], 1, 5);
+
 % - subtract 3 from each element
 
+subThree = (originalVec - 3);
 
 % - count how many are positive
 
+numPositive = sum(originalVec > 0);
 
 % - get the absolute value of each element
 
-
+absVal = abs(originalVec);
 
 % - find the maximum.
 
-
+maxValue = max(originalVec);
 
 % 24. Write some code that will calculate the area of a trapezoid. Create
 % variables for base1, base2, and height and assign them values. Store the
 % result of your calculation in a variable called trapArea. Comment your
 % code so that another user can understand what your code does. 
 
+% Set the values for the trapezoid:
 
+base1 = 19;
 
+base2 = 3;
+
+height = 5;
+
+% To calculate the area of a trapezoid use this formula: 
+% trapArea = ((base1 + base2) * height) / 2
+
+trapArea = ((base1 + base2) * height) / 2;
+
+% This results in the trapArea of: 55
 
 
 % 25. If you were to start your own lab/business, a key metric that you 
@@ -221,9 +253,11 @@ whos
 % costs and then calculates the ROI and stores the value in a variable called
 % ROI.
 
+totalRev = input('Enter total revenues:');
 
+totalCost = input('Enter total cost:');
 
-
+ROI = ((totalRev - totalCost) / totalCost) * 100;
 
 %% 
 %%%%%%%%%%%%%%%%%%%%%%%%%%  Part 2: Hello World %%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -236,10 +270,10 @@ whos
 
 %%% Enter the code for your program below this line
 
+disp ('Hello World')
 
-
-
-
+userInput = input('Enter any text: ', 's')
+disp(['You entered: ', userInput])
 
 %%%%% When you have completed everything, type the following two commands
 %%%%% (without comments) into your command window. 
