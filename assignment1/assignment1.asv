@@ -270,9 +270,10 @@ ROI = ((totalRev - totalCost) / totalCost) * 100;
 
 %%% Enter the code for your program below this line
 
+disp ('Hello World')
 
-
-
+userInput = input('Enter any text: ', 's')
+disp(['You entered: ', userInput])
 
 
 %%%%% When you have completed everything, type the following two commands
