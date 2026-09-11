@@ -1,3 +1,4 @@
+% WHAT DO I NEED TO INCLUDE:
 % Header and comments
 % Welcome/ Do you want to play?
 % Start/restart loop
@@ -10,6 +11,7 @@
 % Check if there's a winner 
 % Display result
 % Play again?
+% Need at least one for loop, one while loop, and a break statement 
 
 
 
@@ -23,13 +25,13 @@ playGame = input ('If you are feeling up for the task, enter 1 to play or enter 
 
 while playGame == 1
 
-% Game board
+% Game Board 
 
 board = ['1' '2' '3';
          '4' '5' '6';
          '7' '8' '9'];
 
-% Assign to players
+% Assign Players Symbols
 
 player = 'X';
 computer = 'O';
@@ -42,11 +44,11 @@ for row = 1:3
      disp ([board(row,1) '   ' board(row,2) '   ' board(row,3)]) 
 end
 
-% Main game loop
+% Main Game Loop
 
 while true 
 
-% Player moves
+% Player Turns
     
 while true 
 
@@ -87,7 +89,7 @@ end
 
 moveCount = moveCount + 1;
 
-% Show Updated Board
+% New Updated Board
 
 disp ('Updated Board:')
 
@@ -95,7 +97,7 @@ for row = 1:3
     disp([board(row,1) '   ' board(row,2) '   ' board(row,3)])
 end
 
-% Did they win?
+% Did Player Win?
 
 playerWin = false;
 
@@ -122,14 +124,14 @@ if playerWin
     break 
 end
 
-% Tie
+% Tie Scenario
 
 if moveCount == 9 
     disp ('OH NO! A TIE!')
     break
 end
 
-% Computer Turn
+% Computer Turns
 
 while true
 
@@ -174,12 +176,12 @@ for row = 1:3
     disp([board(row,1) '   ' board(row,2) '   ' board(row,3)])
 end
 
-% Did the computer win?
+% Did  Computer Win?
 
 computerWin = false;
 
 if board (1,1) == 'O' && board (1,2) == 'O' && board (1,3) == 'O'
-    coputerWin = true;
+    computerWin = true;
 elseif board (2,1) == 'O' && board (2,2) == 'O' && board (2,3) == 'O'
     computerWin = true; 
 elseif board (3,1) == 'O' && board (3,2) == 'O' && board (3,3) == 'O'
@@ -191,13 +193,13 @@ elseif board (1,2) == 'O' && board (2,2) == 'O' && board (3,2) == 'O'
 elseif board (1,3) == 'O' && board (2,3) == 'O' && board (3,3) == 'O'
     computerWin = true;
 elseif board (1,1) == 'O' && board (2,2) == 'O' && board (3,3) == 'O'
-    coputerWin = true; 
+    computerWin = true; 
 elseif board (1,3) == 'O' && board (2,2) == 'O' && board (3,1) == 'O'
-    coputerWin = true; 
+    computerWin = true; 
 end
 
 if computerWin 
-    disp('Oh darn, the computer wins!')
+    disp('Womp Womp, the computer wins!')
     break
 end
 
@@ -205,16 +207,10 @@ end
 
 % Round 2?
 
-playGame = input ('Soooo want to play again? Enter 1 for yes or 0 for no:');
+playGame = input ('Feeling ready for a roound two? Enter 1 for yes or 0 for no:');
 
 end
 
 % Didn't want to play again/closing
 
-disp ('Thanks for playing, see you soon!')
-
-
-
-
-
-
+disp ('Aww man, ok maybe next time... See you soon!')
