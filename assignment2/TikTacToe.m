@@ -8,206 +8,206 @@
 % Players move
 % Check if there's a winner
 % Computers moves
-% Check if there's a winner 
+% Check if there's a winner
 % Display result
 % Play again?
-% Need at least one for loop, one while loop, and a break statement 
+% Need at least one for loop, one while loop, and a break statement
 
 
 
 % Name: Katie Vierno
 % Date: 9/20/2026
 % Description: This script will allow for users to play TicTacToe against
-% another opponent, aka the computer. 
+% another opponent, aka the computer.
 
 disp ('Hello challenger, welcome to TicTacToe!')
 playGame = input ('If you are feeling up for the task, enter 1 to play or enter 0 to decline:');
 
 while playGame == 1
 
-% Game Board 
+    % Game Board
 
-board = ['1' '2' '3';
-         '4' '5' '6';
-         '7' '8' '9'];
+    board = ['1' '2' '3';
+        '4' '5' '6';
+        '7' '8' '9'];
 
-% Assign Players Symbols
+    % Assign Players Symbols
 
-player = 'X';
-computer = 'O';
+    player = 'X';
+    computer = 'O';
 
-moveCount = 0;
+    moveCount = 0;
 
-disp ('Current board')
+    disp ('Current board')
 
-for row = 1:3
-     disp ([board(row,1) '   ' board(row,2) '   ' board(row,3)]) 
-end
-
-% Main Game Loop
-
-while true 
-
-% Player Turns
-    
-while true 
-
-move = input ('Choose a spot from the numbers 1-9:');
-
-if move == 1 && board (1,1) == '1'
-    board (1,1) = player;
-    break
-elseif move == 2 && board (1,2) == '2'
-    board (1,2) = player;
-    break
-elseif move == 3 && board (1,3) == '3'
-    board (1,3) = player;
-    break
-elseif move == 4 && board (2,1) == '4'
-    board (2,1) = player;
-    break
-elseif move == 5 && board (2,2) == '5'
-    board (2,2) = player;
-    break
-elseif move == 6 && board (2,3) == '6'
-    board (2,3) = player; 
-    break
-elseif move == 7 && board (3,1) == '7'
-    board (3,1) = player;
-    break
-elseif move == 8 && board (3,2) == '8'
-    board (3,2) = player;
-    break
-elseif move == 9 && board (3,3) == '9'
-    board (3,3) = player; 
-    break 
-else 
-    disp ('Haha nope... that spot is already taken. Try another one.')
+    for row = 1:3
+        disp ([board(row,1) '   ' board(row,2) '   ' board(row,3)])
     end
 
-end
+    % Main Game Loop
 
-moveCount = moveCount + 1;
+    while true
 
-% New Updated Board
+        % Player Turns
 
-disp ('Updated Board:')
+        while true
 
-for row = 1:3
-    disp([board(row,1) '   ' board(row,2) '   ' board(row,3)])
-end
+            move = input ('Choose a spot from the numbers 1-9:');
 
-% Did Player Win?
+            if move == 1 && board (1,1) == '1'
+                board (1,1) = player;
+                break
+            elseif move == 2 && board (1,2) == '2'
+                board (1,2) = player;
+                break
+            elseif move == 3 && board (1,3) == '3'
+                board (1,3) = player;
+                break
+            elseif move == 4 && board (2,1) == '4'
+                board (2,1) = player;
+                break
+            elseif move == 5 && board (2,2) == '5'
+                board (2,2) = player;
+                break
+            elseif move == 6 && board (2,3) == '6'
+                board (2,3) = player;
+                break
+            elseif move == 7 && board (3,1) == '7'
+                board (3,1) = player;
+                break
+            elseif move == 8 && board (3,2) == '8'
+                board (3,2) = player;
+                break
+            elseif move == 9 && board (3,3) == '9'
+                board (3,3) = player;
+                break
+            else
+                disp ('Haha nope... that spot is already taken. Try another one.')
+            end
 
-playerWin = false;
+        end
 
-if board (1,1) == 'X' && board (1,2) == 'X' && board (1,3) == 'X'
-    playerWin = true; 
-elseif board (2,1) == 'X' && board (2,2) == 'X' && board (2,3) == 'X' 
-    playerWin = true; 
-elseif board (3,1) == 'X' && board (3,2) == 'X' && board (3,3) == 'X'
-    playerWin = true;
-elseif board (1,1) == 'X' && board (2,1) == 'X' && board (3,1) == 'X' 
-    playerWin = true; 
-elseif board (1,2) == 'X' && board (2,2) == 'X' && board (3,2) == 'X'
-    playerWin = true; 
-elseif board (1,3) == 'X' && board (2,3) == 'X' && board (3,3) == 'X'
-    playerWin = true; 
-elseif board (1,1) == 'X' && board (2,2) == 'X' && board (3,3) == 'X'
-    playerWin = true; 
-elseif board (1,3) == 'X' && board (2,2) == 'X' && board (3,1) == 'X'
-    playerWin = true; 
-end
+        moveCount = moveCount + 1;
 
-if playerWin 
-    disp ('WOOHOO YOU WIN!!!')
-    break 
-end
+        % New Updated Board
 
-% Tie Scenario
+        disp ('Updated Board:')
 
-if moveCount == 9 
-    disp ('OH NO! A TIE!')
-    break
-end
+        for row = 1:3
+            disp([board(row,1) '   ' board(row,2) '   ' board(row,3)])
+        end
 
-% Computer Turns
+        % Did Player Win?
 
-while true
+        playerWin = false;
 
-computerMove = randi (9);
+        if board (1,1) == 'X' && board (1,2) == 'X' && board (1,3) == 'X'
+            playerWin = true;
+        elseif board (2,1) == 'X' && board (2,2) == 'X' && board (2,3) == 'X'
+            playerWin = true;
+        elseif board (3,1) == 'X' && board (3,2) == 'X' && board (3,3) == 'X'
+            playerWin = true;
+        elseif board (1,1) == 'X' && board (2,1) == 'X' && board (3,1) == 'X'
+            playerWin = true;
+        elseif board (1,2) == 'X' && board (2,2) == 'X' && board (3,2) == 'X'
+            playerWin = true;
+        elseif board (1,3) == 'X' && board (2,3) == 'X' && board (3,3) == 'X'
+            playerWin = true;
+        elseif board (1,1) == 'X' && board (2,2) == 'X' && board (3,3) == 'X'
+            playerWin = true;
+        elseif board (1,3) == 'X' && board (2,2) == 'X' && board (3,1) == 'X'
+            playerWin = true;
+        end
 
-if computerMove == 1 && board (1,1)  ~= 'X' && board (1,1)  ~= 'O' 
-    board (1,1) = computer;
-    break
-elseif computerMove == 2 && board (1,2) ~= 'X' && board (1,2) ~= 'O'
-    board (1,2) = computer;
-    break
-elseif computerMove == 3 && board (1,3) ~= 'X' && board (1,3) ~= 'O'
-    board (1,3) = computer;
-    break
-elseif computerMove == 4 && board (2,1) ~= 'X' && board (2,1) ~= 'O'
-    board (2,1) = computer;
-    break
-elseif computerMove == 5 && board (2,2) ~= 'X' && board (2,2) ~= 'O'
-    board (2,2) = computer;
-    break
-elseif computerMove == 6 && board (2,3) ~= 'X' && board (2,3) ~= 'O'
-    board (2,3) = computer;
-    break
-elseif computerMove == 7 && board (3,1) ~= 'X' && board (3,1) ~= 'O'
-    board (3,1) = computer;
-    break
-elseif computerMove == 8 && board (3,2) ~= 'X' && board (3,2) ~= 'O'
-    board (3,2) = computer;
-    break
-elseif computerMove == 9 && board (3,3) ~= 'X' && board (3,3) ~= 'O'
-    board (3,3) = computer;
-    break
-end
+        if playerWin
+            disp ('WOOHOO YOU WIN!!!')
+            break
+        end
 
-end 
+        % Tie Scenario
 
-moveCount = moveCount + 1;
+        if moveCount == 9
+            disp ('OH NO! A TIE!')
+            break
+        end
 
-disp ('Computer move:')
+        % Computer Turns
 
-for row = 1:3
-    disp([board(row,1) '   ' board(row,2) '   ' board(row,3)])
-end
+        while true
 
-% Did  Computer Win?
+            computerMove = randi (9);
 
-computerWin = false;
+            if computerMove == 1 && board (1,1)  ~= 'X' && board (1,1)  ~= 'O'
+                board (1,1) = computer;
+                break
+            elseif computerMove == 2 && board (1,2) ~= 'X' && board (1,2) ~= 'O'
+                board (1,2) = computer;
+                break
+            elseif computerMove == 3 && board (1,3) ~= 'X' && board (1,3) ~= 'O'
+                board (1,3) = computer;
+                break
+            elseif computerMove == 4 && board (2,1) ~= 'X' && board (2,1) ~= 'O'
+                board (2,1) = computer;
+                break
+            elseif computerMove == 5 && board (2,2) ~= 'X' && board (2,2) ~= 'O'
+                board (2,2) = computer;
+                break
+            elseif computerMove == 6 && board (2,3) ~= 'X' && board (2,3) ~= 'O'
+                board (2,3) = computer;
+                break
+            elseif computerMove == 7 && board (3,1) ~= 'X' && board (3,1) ~= 'O'
+                board (3,1) = computer;
+                break
+            elseif computerMove == 8 && board (3,2) ~= 'X' && board (3,2) ~= 'O'
+                board (3,2) = computer;
+                break
+            elseif computerMove == 9 && board (3,3) ~= 'X' && board (3,3) ~= 'O'
+                board (3,3) = computer;
+                break
+            end
 
-if board (1,1) == 'O' && board (1,2) == 'O' && board (1,3) == 'O'
-    computerWin = true;
-elseif board (2,1) == 'O' && board (2,2) == 'O' && board (2,3) == 'O'
-    computerWin = true; 
-elseif board (3,1) == 'O' && board (3,2) == 'O' && board (3,3) == 'O'
-    computerWin = true;
-elseif board (1,1) == 'O' && board (2,1) == 'O' && board (3,1) == 'O'
-    computerWin = true;
-elseif board (1,2) == 'O' && board (2,2) == 'O' && board (3,2) == 'O'
-    computerWin = true;
-elseif board (1,3) == 'O' && board (2,3) == 'O' && board (3,3) == 'O'
-    computerWin = true;
-elseif board (1,1) == 'O' && board (2,2) == 'O' && board (3,3) == 'O'
-    computerWin = true; 
-elseif board (1,3) == 'O' && board (2,2) == 'O' && board (3,1) == 'O'
-    computerWin = true; 
-end
+        end
 
-if computerWin 
-    disp('Womp Womp, the computer wins!')
-    break
-end
+        moveCount = moveCount + 1;
 
-end
+        disp ('Computer move:')
 
-% Round 2?
+        for row = 1:3
+            disp([board(row,1) '   ' board(row,2) '   ' board(row,3)])
+        end
 
-playGame = input ('Feeling ready for a roound two? Enter 1 for yes or 0 for no:');
+        % Did  Computer Win?
+
+        computerWin = false;
+
+        if board (1,1) == 'O' && board (1,2) == 'O' && board (1,3) == 'O'
+            computerWin = true;
+        elseif board (2,1) == 'O' && board (2,2) == 'O' && board (2,3) == 'O'
+            computerWin = true;
+        elseif board (3,1) == 'O' && board (3,2) == 'O' && board (3,3) == 'O'
+            computerWin = true;
+        elseif board (1,1) == 'O' && board (2,1) == 'O' && board (3,1) == 'O'
+            computerWin = true;
+        elseif board (1,2) == 'O' && board (2,2) == 'O' && board (3,2) == 'O'
+            computerWin = true;
+        elseif board (1,3) == 'O' && board (2,3) == 'O' && board (3,3) == 'O'
+            computerWin = true;
+        elseif board (1,1) == 'O' && board (2,2) == 'O' && board (3,3) == 'O'
+            computerWin = true;
+        elseif board (1,3) == 'O' && board (2,2) == 'O' && board (3,1) == 'O'
+            computerWin = true;
+        end
+
+        if computerWin
+            disp('Womp Womp, the computer wins!')
+            break
+        end
+
+    end
+
+    % Round 2?
+
+    playGame = input ('Feeling ready for a roound two? Enter 1 for yes or 0 for no:');
 
 end
 
