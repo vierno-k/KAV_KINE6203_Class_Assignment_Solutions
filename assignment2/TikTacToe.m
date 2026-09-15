@@ -16,7 +16,7 @@
 
 
 % Name: Katie Vierno
-% Date: 9/20/2026
+% Date: 9/14/2026
 % Description: This script will allow for users to play TicTacToe against
 % another opponent, aka the computer.
 
@@ -213,4 +213,4 @@ end
 
 % Didn't want to play again/closing
 
-disp ('Aww man, ok maybe next time... See you soon!')
+disp ('Aww man, ok maybe next time... See you soon!') 
