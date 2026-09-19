@@ -15,7 +15,7 @@
 
 
 
-% Name: Katie Vierno
+% Name: Katie Vierno 
 % Date: 9/14/2026
 % Description: This script will allow for users to play TicTacToe against
 % another opponent, aka the computer.
@@ -42,6 +42,61 @@ while playGame == 1
 
     for row = 1:3
         disp ([board(row,1) '   ' board(row,2) '   ' board(row,3)])
+    end
+
+    % Challenge --> Who goes first?
+
+    playerFirst = input ('Feeling confident and want to go first? Enter 1 for yes or 0 for no:');
+
+    if playerFirst == 0
+
+        while true
+
+            computerMove = randi (9);
+
+            if computerMove == 1 && board (1,1)  ~= 'X' && board (1,1)  ~= 'O'
+                board (1,1) = computer;
+                break
+            elseif computerMove == 2 && board (1,2) ~= 'X' && board (1,2) ~= 'O'
+                board (1,2) = computer;
+                break
+            elseif computerMove == 3 && board (1,3) ~= 'X' && board (1,3) ~= 'O'
+                board (1,3) = computer;
+                break
+            elseif computerMove == 4 && board (2,1) ~= 'X' && board (2,1) ~= 'O'
+                board (2,1) = computer;
+                break
+            elseif computerMove == 5 && board (2,2) ~= 'X' && board (2,2) ~= 'O'
+                board (2,2) = computer;
+                break
+            elseif computerMove == 6 && board (2,3) ~= 'X' && board (2,3) ~= 'O'
+                board (2,3) = computer;
+                break
+            elseif computerMove == 7 && board (3,1) ~= 'X' && board (3,1) ~= 'O'
+                board (3,1) = computer;
+                break
+            elseif computerMove == 8 && board (3,2) ~= 'X' && board (3,2) ~= 'O'
+                board (3,2) = computer;
+                break
+            elseif computerMove == 9 && board (3,3) ~= 'X' && board (3,3) ~= 'O'
+                board (3,3) = computer;
+                break
+            end
+
+        end
+
+        % Updated Move Count
+
+        moveCount = moveCount + 1;
+
+        % Board When Computer Goes First
+
+        disp ('Alrighty, the computer will go first!');
+
+        for row = 1:3
+            disp ([board(row,1) '   ' board(row,2) '   ' board(row,3)])
+        end
+
     end
 
     % Main Game Loop
@@ -203,7 +258,7 @@ while playGame == 1
             break
         end
 
-    end
+    end 
 
     % Round 2?
 
@@ -213,4 +268,4 @@ end
 
 % Didn't want to play again/closing
 
-disp ('Aww man, ok maybe next time... See you soon!') 
+disp ('Aww man, ok maybe next time... See you soon!')
