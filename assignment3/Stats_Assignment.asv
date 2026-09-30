@@ -63,13 +63,21 @@ title('40 Yard Dash vs. Shuttle Time')
 
 % Calculate the correlation coefficient between these two variables.
 
+corrcoef(forty, shuttle, 'Rows', 'complete')
 
 % If your correlation coefficient indicates a strong relationship,
 % fit a linear model to your data and calculate the coefficient of
 % variation (r-squared). Plot your model on your scatterplot. 
 
+model = fitlm(forty, shuttle);
+
+rSquared = model.Rsquared.Ordinary;
+
+hold on
+plot(model)
+hold off
 
 % Run a t-test to determine if there is a difference in means between
 % the 40 yard dash and the shuttle run. 
 
-
+[h,p] = ttest (forty, shuttle);
