@@ -38,7 +38,7 @@ medianThreeCone = median(threeCone, 'omitnan');
 
 figure
 
-histogram(forty)
+histogram(forty) 
 hold on 
 
 histogram(shuttle)
