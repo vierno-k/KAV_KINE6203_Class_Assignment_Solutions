@@ -54,7 +54,7 @@ for resultNum = 1 :length(results)
 end
 
 % Export results to a CSV file
-writecell(output, 'isokinetic_results.csv');
+writecell(output, 'iso_results.csv');
 
 
 
