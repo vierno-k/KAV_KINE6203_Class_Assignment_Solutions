@@ -3,7 +3,28 @@ function [maleIsoIndMeans, femaleIsoIndMeans, maleGroupIsoMean, femaleGroupIsoMe
 % This function is one that separates participants by their gender and also
 % calculates each participants mean isometric strength across the three
 % days. This function also calculates the overall isometric mean strength
-% for both female and male groups. 
+% for both female and male groups.
+%   Inputs:
+% Gender- a vector that identifies each of the athletes as male ('M') or
+% female ('F').
+% day1- a vector that has each of the athletes isometric strength
+% measurements collected from the first day of testing.
+% day2- a vector that has each of the athletes isometric strength
+% measurements collected from the second day of testing.
+% day3- a vector that has each of the athletes isometric strength
+% measurements collected from the third day of testing.
+%   Outputs:
+% maleIsoIndMeans- a vector that has the mean isometric strength of the
+% three days of testing for each of the male athletes. 
+% femaleIsoIndMeans- a vector that has the mean isometric strength of the
+% three days of testing for each of the female athletes. 
+% maleGroupIsoMean- a single number that represents the overall isometric
+% strength mean for all of the male athletes. 
+% femaleGroupIsoMean- a single number that represents the overall isometric
+% strength mean for all of the female athletes. 
+%   How to call genderIsoCalc- [maleIsoIndMeans, femaleIsoIndMeans,
+% maleGroupIsoMean, femaleGroupIsoMean] = genderIsoCalc(Gender, Day1,
+% Day2,Day3);
 
 % Who is male, who is female?
 male = Gender == 'M';
