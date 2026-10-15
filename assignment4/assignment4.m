@@ -25,15 +25,16 @@ normDay3mean = mean (normDay3);
 
 % Question 7, export your results to a csvfile using an appropriate built-in function
 
-% Final results in cell array
-results = {maleIsoIndMeans, femaleIsoIndMeans, maleGroupIsoMean, femaleGroupIsoMean...
+% Create a cell array for each of the final results
+results = {maleIsoIndMeans, femaleIsoIndMeans, maleGroupIsoMean, femaleGroupIsoMean, ...
     Day1toDay2, Day2toDay3, normDay1mean, normDay2mean, normDay3mean};
 
-% Headers for results 
+% Create titles for results to help identify each of the 9 final results 
 headers = {'maleIsoIndMeans', 'femaleIsoIndMeans', 'maleGroupIsoMean', 'femaleGroupIsoMean', ...
     'Day1toDay2', 'Day2toDay3', 'normDay1mean', 'normDay2mean', 'normDay3mean'};
 
-% Length of longest final result
+% Determine how many numbers the longest result has, make sure there are
+% enough rows for all the results
 maxLength = 0;
 
 for resultNum = 1:length (results) 
@@ -42,13 +43,16 @@ for resultNum = 1:length (results)
     end
 end
 
-% Output- empty cell array
+% Make a empty cell array that includes enough rows for the longest result,
+% a additional row for the titles, and nine total columns for each of the
+% results
 output = cell(maxLength + 1, length(results));
 
-% First row column headers
+% Put the tittles for each of the results in the first row
 output(1, :) = headers;
 
-% Filling each column with its correct results
+% Fill each column with its correct results, values go into their spaces
+% and the unfilled spaces stay empty
 for resultNum = 1 :length(results)
     values = results{resultNum};
     output (2:numel(values) + 1, resultNum) = num2cell(values(:));
