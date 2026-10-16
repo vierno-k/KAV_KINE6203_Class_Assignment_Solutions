@@ -24,7 +24,7 @@ function [maleIsoIndMeans, femaleIsoIndMeans, maleGroupIsoMean, femaleGroupIsoMe
 % strength mean for all of the female athletes. 
 %   How to call genderIsoCalc- [maleIsoIndMeans, femaleIsoIndMeans,
 % maleGroupIsoMean, femaleGroupIsoMean] = genderIsoCalc(Gender, Day1,
-% Day2,Day3);
+% Day2,Day3); 
 
 % Who is male, who is female?
 male = Gender == 'M';

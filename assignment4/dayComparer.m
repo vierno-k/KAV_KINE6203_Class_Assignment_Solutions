@@ -9,7 +9,7 @@ function [increasedIDs] = dayComparer (SubjectID, firstDay, secondDay)
 % collected from the first day of testing.
 % secondDay- a vector that includes each of the athletes strength values
 % collected from the second day of testing.
-%   Output:
+%   Output: 
 % increasedIDs- a vector that has the IDs of athletes whose strength
 % increased from the first day, to the second day of testing. 
 %   How to call dayComparer- increasedIDs = dayComparer(SubID, Day1, Day2);
